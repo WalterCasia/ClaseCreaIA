@@ -10,7 +10,7 @@ print("2. Insecticidas")
 print("3. Herbicidas")
 print("////////////////////////////////////")
 
-mensaje_error = "Codigo de producto invalido"
+mensaje_error = "Lote de produccion invalido"
 
 def promedio(total_unidades, lotes):
     if lotes == 0:
@@ -78,18 +78,21 @@ while True:
                     total_unidades_fertilizante += int(lote_produccion[1:4])
                 except:
                     print("No ingreses texto en los codigos.")
+                    codigos_erroneos.append(lote_produccion)
             elif lote_produccion[0] == "2":
                 try:
                     insecticida.append(lote_produccion)
                     total_unidades_insecticida += int(lote_produccion[1:4])
                 except:
                     print("No ingreses texto en los codigos.")
+                    codigos_erroneos.append(lote_produccion)
             elif lote_produccion[0] == "3":
                 try:
                     herbicida.append(lote_produccion)
                     total_unidades_herbicida += int(lote_produccion[1:4])
                 except:
                     print("No ingreses texto en los codigos.")
+                    codigos_erroneos.append(lote_produccion)
         else:
             print(mensaje_error)
             codigos_erroneos.append(lote_produccion)
