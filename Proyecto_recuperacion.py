@@ -77,7 +77,7 @@ while True:
                     fertilizante.append(lote_produccion)
                     total_unidades_fertilizante += int(lote_produccion[1:4])
                 except:
-                    print(mensaje_error, lote_produccion)
+                    print(mensaje_error)
                     codigos_erroneos.append(lote_produccion)
             elif lote_produccion[0] == "2":
                 try:
