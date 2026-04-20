@@ -48,12 +48,17 @@ class Doctor(PersonalMedico):
         print(">> Realizando diagnostico especializado.")
 
     def atender_paciente(self, objeto_paciente):
-        diagnostico_doctor = input(f"Ingrese el diagnostico del paciente {Paciente.nombre}: ")
-        Paciente.historial_paciente.AgregarObservaciones(diagnostico_doctor)
-        dosis_recomendada = int(input("Ingrese la dosis recomendada: "))
-        Paciente.salud += dosis_recomendada
-        print(f"!Tratamiento exitoso! La salud de {self.nombre} ha subido a {self.salud}%")
-
+        self.realizar_labor()
+        diagnostico_doctor = input(f"Ingrese el diagnostico del paciente: ")
+        objeto_paciente.historial_paciente.AgregarObservaciones(diagnostico_doctor)
+        
+        while True:
+            try:
+                dosis_recomendada = int(input("Ingrese dosis de recuperación (1-50): "))
+                break 
+            except:
+                print("[ERROR]: Solo se permiten valores numéricos para la dosis. Intente de nuevo.")
+        
 class Enfermero(PersonalMedico):
     def realizar_labor(self):
         print(">> Aplicando cuidados y revisando signos vitales.")
@@ -78,13 +83,13 @@ class Paciente:
         self.estado = "Estable"
 
     def __str__(self):
-        print(f"Nombre: {self.nombre} Edad: {self.edad}")
+        return(f"Nombre: {self.nombre} | Edad: {self.edad} | Salud: {self.salud}% {self.estado}")
         
-    def diagnostico_salud(self, salud):
-        if salud < 20 and salud > 0:
+    def actualizar_estado(self, salud):
+        if self.salud < 20:
             self.estado_salud = "Critico"
         else:
-            pass
+            self.estado_salud = "Estable"
 
 vida_sana = Hospital()
 while True:
@@ -107,7 +112,7 @@ while True:
         
         Doctor.atender_paciente(paciente_a_tratar)
     elif opcion == 4:
-        vida_sana.mostrar_pacientes
+        vida_sana.mostrar_pacientes()
     elif opcion == 5:
         print("Saliendo del programa")
         break

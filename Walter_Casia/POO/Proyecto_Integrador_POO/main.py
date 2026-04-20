@@ -1,5 +1,7 @@
 import random
-from pokedex import CATALOGO_POKEMON
+import pokedex
+import pokemon_clases
+
 
 class Pokemon:
     def __init__(self, nombre, hp_maximo, energia_maxima, tipo):
@@ -10,7 +12,32 @@ class Pokemon:
         self.__energia_maxima = energia_maxima
         self.tipo = tipo
 
-
+################# Modo de juego  
+    def seleccionar_pokemon(jugador):
+        pokedex.mostrar_catalogo_disponible
+        while True:
+            try:
+                numero_pokemon = int(input("Elija el numero de su Pokemon: "))
+                pokemon_elegido = pokedex.CATALOGO_POKEMON.get(numero_pokemon - 1)
+                return (pokemon_clases.crear_pokemon(pokemon_elegido))
+                break
+            except:
+                print("[ERROR] Ingrese un numero de pokemon valido.")
+    
+    def pedir_acciones():
+        print("Que accion deseas realiar?\n 1. Atacar (Costo: 15 EP)\n 2. Defender (Costo: 5 EP)\n 3. Descansar (Restaura: 20 EP)")
+        while True:
+            try:
+                accion_elegida = input("> Opcion: ")
+                if accion_elegida in (1, 2, 3):
+                    return accion_elegida
+            except:
+                print("[ERROR] Ingrese un numero de opcion valida")
+    
+    def accion_bot():
+        return random.randint(1,3)
+        
+######################
     @property
     def hp_maximo(self):
         return self.__hp_maximo
@@ -35,29 +62,22 @@ class Pokemon:
 #########################################################
 class Jugador:
     def __init__(self, nombre):
-        self.nombre = nombre
-
-    def obtener_datos_pokemon(numero_pokemon):
-        pokemon_elegido = CATALOGO_POKEMON.get(numero_pokemon - 1)
-        print(pokemon_elegido)
+        self.nombre = nombre        
 
 
-##############################################################
+################modo combate #################################
 print("Seleccione el Modo de Juego: ")
 print("1. Jugador vs Jugador")
 print("2. Jugador vz Computadora")
-opcion_modo_juego = input("Seleccione el modo de juego: ")
+try:
+    opcion_modo_juego = int(input("Seleccione el modo de juego: "))
+except:
+    input("[ERROR] Ingresa un numero de opcion valida")
 
-while True:
-    if opcion_modo_juego == 1:
-        print("Modo de juego seleccionado PvP!!!")
-        mostrar_catalogo_disponible()
-        nombre_juagador_1 = input("Jugador 1, como deberia llamarte: ")
-        numero_pokemon_j1 = int(input(f"{nombre_juagador_1}, Elija el numero de su Pokemon: "))
-        print(f"!Has seleccionado a {nombre_pokemon_j1}")
-        nombre_juagador_2 = input("Jugador 2, como deberia llamarte: ")
-        numero_pokemon_j2 = int(input(f"{nombre_juagador_2}, Elija el numero de su Pokemon: "))
-        print(f"!Has seleccionado a {nombre_pokemon_j2}")
-        print("!COMIENZA LA BATALLA!")
-        print(f"{nombre_pokemon_j1} {tipo}")
+pokemon_j1 = Pokemon.seleccionar_pokemon("jugador_1")
 
+if opcion_modo_juego == 1:
+    print("Modo de juego seleccionado PvP!!!")
+    pokemon_j2 = Pokemon.seleccionar_pokemon("jugador_2")
+        
+        
