@@ -1,0 +1,11 @@
+SELECT *
+FROM user
+WHERE age IN (25 ,30 ,35) AND email IS NOT NULL
+
+SELECT *
+FROM user
+WHERE age IN NOT (25 ,30 ,35)
+
+SELECT *
+FROM user
+WHERE age IN (25 ,30 ,35) AND email IS NOT NULL
