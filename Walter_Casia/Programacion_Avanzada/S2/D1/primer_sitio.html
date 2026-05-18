@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">    
+    <head>
+        <title>Mi primera pagina web</title>
+    </head>
+    <body>
+        <header>
+            <h1>Bienvenido a mi pagina web</h1>
+            <nav>
+                <a href="bienvenida">Bienvenida</a>
+                <a href="sobre_mi">Sobre mi</a>
+            </nav>
+        </header>
+        <main  id="inicio">
+            <section id="bienvenida">
+                <p>Estoy aprendiendo a crear paginas web</p>
+                <p>Esta es la seccion del main</p>
+            </section>
+            <section id="sobre_mi">
+                <h2>Sobre mi</h2>
+                <p>Me llamo walter</p>
+            </section>
+            <section>
+                <p>Este es un texto qe contine un <span style="color: aqua;">Fragmento Resaltado </span></p>
+                <p>est es un texto que contine una palabra resaltada <strong>nombre</strong></p>   
+                <a href="https://google.com">google</a>
+            </section>
+            <section id="imagenes">
+                <img src="images.jfif">
+            </section>
+            <section>
+                <form action="/formulario" method="get">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" name="nombre" type="text" placeholder="ej: Walter" required>
+                    <br>
+
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="ejemplo@.email.com">
+                    <br>
+
+                    <label for="password"> Contrasena</label>
+                    <input id="password" name="password" type="password" placeholder="*****">
+                    <br>
+
+                    <label for="mensaje">Mensaje</label>
+                    <input id="mensaje" >
+                </form>
+            </section>
+            <section>
+                <h3>Lista desordenada</h3>
+                <ul>
+                    <li>Carlos</li>
+                    <li>Marcos</li>
+                    <li>Vilma</li>
+                </ul>
+                <h3>Lista ordenada</h3>
+                <ol>
+                    <li>mate</li>
+                    <li>conta</li>
+                </ol>
+            </section>
+            <section>
+                <table>
+                    <tr>
+                        <th>Company</th>
+                        <th>Contact</th>
+                        <th>Country</th>
+                    </tr>
+                    <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                    </tr>
+                    <tr>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td>
+                        <td>Mexico</td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+        <footer id="contacto">
+            <p>contacto:  <a href="mailto: ejmplo@email.com">ejemplo@email.com</a></p>
+            <p>walter@gmail.com</p>
+            <p>Derechos reservados 2026</p>
+        </footer>
+    </body>
+</html>

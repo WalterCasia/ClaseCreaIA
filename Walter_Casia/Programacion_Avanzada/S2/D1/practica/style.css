@@ -1,0 +1,125 @@
+/* Configuración general del cuerpo */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* Fondo oscuro moderno */
+  color: #e0e0e0; /* Texto claro */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Contenedor principal */
+main {
+  max-width: 800px;
+  width: 90%;
+  margin: 40px auto;
+  background-color: #1e1e1e; /* Fondo de la tarjeta central */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border-top: 5px solid #ff3333; /* Detalle táctico rojo */
+}
+
+/* Sección de presentación */
+section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Títulos */
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #aaaaaa;
+  margin-top: 0;
+}
+
+/* Línea divisoria */
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ff3333, transparent);
+  margin: 20px 0;
+}
+
+/* Párrafo */
+p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #cccccc;
+  text-align: justify;
+}
+
+/* Palabras clave (Limpiando los estilos en línea anteriores) */
+.rojo {
+  color: #ff3333;
+  font-weight: bold;
+}
+
+.azul {
+  color: #3399ff;
+  font-weight: bold;
+}
+
+strong {
+  color: #ffffff;
+}
+
+/* Imagen */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Tabla de productos */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background-color: #252525;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+/* Encabezado de la tabla */
+th {
+  background-color: #ff3333;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Filas de contenido */
+td {
+  border-bottom: 1px solid #383838;
+}
+
+/* Fila interactiva al pasar el mouse */
+tr:hover td {
+  background-color: #2e2e2e;
+}
+
+/* Pie de página */
+footer {
+  margin-top: auto;
+  padding: 20px;
+  color: #666666;
+  font-size: 0.8rem;
+}
