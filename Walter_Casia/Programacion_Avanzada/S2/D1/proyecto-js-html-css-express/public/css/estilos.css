@@ -1,0 +1,29 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(25, 121, 81);
+    margin: 24px;
+}
+
+.caja-conexion{
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+h1{
+    color: antiquewhite;
+}
+
+input, button{
+    padding: auto;
+    margin: auto;
+    border-radius: 4px;
+    border: 1px solid green;
+}
+
+button{
+    background: green;
+    font-weight: bold;
+    color: antiquewhite;
+    cursor: pointer;
+}
