@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>BANCO DE GUATEMALA</title>
+        <link rel="stylesheet" href="css/banco.css"
+    </head>
+    <body>
+        <header>
+            <h1>Banco de Guatemala</h1>
+        </header>
+        <main>
+            <h2>Solicitud de Credito personal</h2>
+            <div id="caja-envio">
+                <form id="formulario" action="/enviar_datos" method="post">
+                    <label for="nombre">Nombre del solicitante: </label>
+                    <input id="nombre" name="nombre" type="text" placeholder="Ej. Walter">
+                    <br>
+
+                    <label for="ingreso_mesual">Ingreso mensual: </label>
+                    <input id="ingreso_m" name="ingreso_m" type="number" placeholder="******">
+                    <br>
+
+                    <label for="monto_solicitado">Monto solicitado: </label>
+                    <input id="monto_s" name="monto_s" type="number" placeholder="******">
+                    <br>
+                    
+                    <button>Enviar</button>
+                </form>
+
+                <script>
+                    alert("el monto solicitado excede, tu ingreso mensual");
+                </script>
+            </div>
+        </main>
+    </body>
+</html>

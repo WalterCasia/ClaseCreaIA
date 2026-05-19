@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Estacion espacial | Base de control</title>
+        <link rel="stylesheet" href="css/estilo.css"
+    </head>
+    <body>
+        <header>
+            <h1>Bienvenido a la base de control espacial</h1>
+            <h2>Panel de control</h2>
+            <h3>Modulo de despacho y registro de misiones</h3>
+        </header>
+        <main>
+            <section>
+                <p><stron>Operaciones registradas</stron></p>
+                <a href="/misiones">Ver Bitacora</a>
+            </section>
+            <section>
+                <h3>Registrar nueva mision de exploracion</h3>
+                <form action="/misiones" method="post">
+                    
+                    <div>
+                        <label for="nombre">Nombre de la nave: </label>
+                        <input type="text" name="nombre" id="nombre" required placeholder="Halcon Milenario">
+                    </div>
+                    <br>
+                    
+                    <div>
+                        <label for="destino">Sector de destino:</label>
+                        <input type="text" name="destino" id="destino" required placeholder="Estrella">
+                    </div>
+                    <br>
+
+                    <div>
+                        <label for="rango_peligro">Rango peligro:</label>
+                        <select  name="rango_peligro" id="rango_peligro" required>
+                            <option value="">Selecciona un rango</option>
+                            <option value="Bajo">Bajo</option>
+                            <option value="Medio">Medio</option>
+                            <option value="Alto">Alto</option>
+                            <option value="Extremo">Extremo</option>
+                        </select>
+                    </div>
+                    <br>
+
+                    <div>
+                        <label for="detalles">Detalle adicionales:</label>
+                        <textarea name="detalles" id="detalles" placeholder="Ingresa la informacion adicional"></textarea>
+                    </div>
+                    <br>
+
+                    <button type="submit">Registrar Mision</button>
+
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p>2026 Estacion espacila. Todos los derechos reservados</p>
+        </footer>
+    </body>
+
+</html>

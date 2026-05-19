@@ -1,0 +1,40 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0F2C59;
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    color: #F9F7F7 ;
+    text-align: center;
+}
+
+h2{
+    color: #FFD700;
+    text-align: center;
+}
+
+div{
+    background: #111111 ;
+    padding: 25px;
+    border-radius: 25px;
+    color: antiquewhite;
+    line-height: 2;
+}
+
+input, button{
+    padding: auto;
+    margin: auto;
+    border-radius: 4px;
+    border: 1px solid rgb(64, 69, 73);
+}
+
+button{
+    background: rgb(100, 101, 109);
+    font-weight: bold;
+    color: antiquewhite;
+    cursor: pointer;
+}
+

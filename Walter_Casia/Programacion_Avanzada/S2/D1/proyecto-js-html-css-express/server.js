@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended: true}))
 app.post('/enviar_datos', (res, req) =>{
     const{nombre, id} = req.body;
     console.log(`Nombre: ${nombre} ID: ${id} `)
-    res.setEncoding('Datos recibidos correctamente')
+    res.sendFile(path.join(__dirname,'public', 'agradecimiento.html'))
 });
 
 app.listen(PORT, () =>{
