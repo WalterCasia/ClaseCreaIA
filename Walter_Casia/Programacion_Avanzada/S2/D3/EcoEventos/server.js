@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public/views')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/confirmar', (req, res) => {
     const { nombre, correo } = req.body;
@@ -42,6 +42,54 @@ app.post('/confirmar', (req, res) => {
         `);
     }); 
 }); 
+
+app.get('/asistencias', (req, res) => {
+    console.log('[SERVIDOR] petición GET recibida. Solicitando asistencias...')
+
+    const querySQL = 'SELECT * FROM asistentes ORDER BY id';
+
+    db.query(querySQL, (err, resultado) => {
+        if (err) {
+            console.error("Error al consultar la base de datos: ", err)
+            return res.status(500).send("<h1>Error crítico. No se pudo recuperar la información")
+        }
+
+        let filasHTML = ''
+
+        resultado.forEach( (asistentes) => {
+            filasHTML += `
+                <tr>
+                    <td>${asistentes.id}</td>
+                    <td>${asistentes.nombre}</td>
+                    <td>${asistentes.correo}</td>    
+                </tr>
+            <br>
+            `
+        } );
+
+        if (resultado.length === 0)
+        {
+            filasHTML = '<h1>No hay asistencias registradas</h1>'
+        }
+
+        res.send(
+            `
+            <!DOCTYPE html>
+            <html lan="es">
+            <head>
+                <title>Asistencias</title>
+            </head>
+            <body>
+                ${filasHTML}
+            </body>
+            `
+        )
+
+
+    })
+
+} )
+
 
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
