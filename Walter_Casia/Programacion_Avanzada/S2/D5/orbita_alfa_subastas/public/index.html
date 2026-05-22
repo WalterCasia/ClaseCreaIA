@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Orbita Alfa - Subastas</title>
+        <link rel="stylesheet" href="css/estilos.css">
+    </head>
+    <body>
+        <header>
+            <h1>Subastas Orbita Alfa</h1>
+        </header>
+        <main>
+             <div class="card">
+                <form id="formulario" action="/subasta" method="post">
+
+                    <div>
+                        <label for="idLote">ID del lote: </label>
+                        <br>
+                        <input id="idLote" name="idLote" type="number" placeholder="*******">
+                        <br>
+                    </div>
+
+                    <div>
+                        <label for="comerciante">Nombre de comerciante: </label>
+                        <br>
+                        <input id="comerciante" name="comerciante" type="text" placeholder="Han Solo">
+                        <br>
+                    </div>
+
+                    <div>
+                        <label for="oferta">Oferta en creditos: </label>
+                        <br>
+                        <input id="oferta" name="oferta" type="number" placeholder="0.00">
+                        <br>
+                    </div>
+                    
+                    <button type="submit">Enviar</button>
+                </form>
+
+                <h3>Monitoreo</h3>
+                <a href="/consultar">
+                    <button>consultar</button>
+                </a>
+            </div> 
+        </main>
+    </body>
+</html>
