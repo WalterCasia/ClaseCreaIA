@@ -1,0 +1,20 @@
+<img id="imagen" width="300"/>
+<script>
+async function cargarImagen(){
+    try{
+        const rest = await fetch("https://assets.pluhe.com/blog/small/JqxsAtj7G5bc4D8vfE5LKrGjLhm2dgYi7aRtEXBd.jpg")
+
+        const blob = await res.blob();
+        const urlTemporal = URL.createObjectURL(blob)
+
+        document.getElementById("imagen").src = urlTemporal
+
+        console.log("Las imagen esta cargada en memoria")
+    }
+    catch(error){
+        console.error("Error al descargar: ", error)
+    }
+}
+
+cargarImagen()
+</script>
