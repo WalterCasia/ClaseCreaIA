@@ -1,38 +1,18 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Poyecto integrador</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-            <h1>Proyecto integrador</h1>
-        </header>
-        <main>
-            <div class="caja">
-            <form id="formulario" action="/datos" method="post">
-                <div>
-                    <label for="nombre">Nombre: </label>
-                    <br>
-                    <input id="nombre" name="nombre" type="text" placeholder="Walter">
-
-                </div>
-
-                <div>
-                    <label for="apellido">Apellido: </label>
-                    <br>
-                    <input id="apellido" name="apellido" type="text" placeholder="Casia">
-                    
-                </div>
-                
-                <div>
-                    <br>
-                <button type="submit">Enviar</button>
-                </div>
-
-            </form>
-            </div>
-        </main>
-    </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Generador de Actividades</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Generador de Actividades</h1>
+    <form action="/form/resultado" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="text" name="apellido" placeholder="Tu apellido" required>
+      <button type="submit">Generar</button>
+    </form>
+  </div>
+</body>
 </html>

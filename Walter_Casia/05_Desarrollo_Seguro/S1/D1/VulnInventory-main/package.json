@@ -1,0 +1,10 @@
+{
+  "name": "vuln-inventory-root",
+  "version": "1.0.0",
+  "description": "Entorno educativo vulnerable por diseño - Control de Inventario",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "npm install --prefix backend && npm start --prefix backend",
+    "dev": "npm install --prefix backend && npm run dev --prefix backend"
+  }
+}

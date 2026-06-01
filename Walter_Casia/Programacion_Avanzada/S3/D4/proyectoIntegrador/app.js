@@ -1,21 +1,16 @@
+const express = require('express');
 const dotenv = require('dotenv');
+const formRouter = require('./routes/rutas');
+
 dotenv.config();
-const express = require("express");
 const app = express();
 const PORT = process.env.PORT;
-require('dotenv').config();
-const path = require('path');
 
-const rutaDatos = require("./routes/rutas")
-
-app.use(express.json());
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.post('/datos', (req, res) =>{
-    const {nombre, apellido} = req.body
-})
+app.use('/form', formRouter);
 
-app.listen(PORT, () =>{
-    console.log(`Servidor escuchando en puerto http://localhost:${PORT}`)
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
