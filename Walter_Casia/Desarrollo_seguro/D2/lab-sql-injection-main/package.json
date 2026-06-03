@@ -1,0 +1,18 @@
+{
+  "name": "sqli-educational-lab",
+  "version": "1.0.0",
+  "description": "Un laboratorio interactivo simple y didáctico para practicar y mitigar la inyección SQL.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npm install && nodemon server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
+    "mysql2": "^3.22.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
